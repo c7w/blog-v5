@@ -44,6 +44,7 @@ Topics I am interested in:
 - Multi-turn Reinforcement Learning
 - Scalable Reinforcement Learning
 - Evaluation of Capability Bottleneck in Agent Systems
+  - e.g., memorization, spatial reasoning, tool using...
 - Self-evolution of Agent Systems
 
 
