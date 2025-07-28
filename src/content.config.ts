@@ -25,6 +25,16 @@ const posts = defineCollection({
 
 const spec = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/spec' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      pubDate: z.coerce.date(),
+      modDate: z.coerce.date().optional(),
+      description: z.string().optional(),
+      banner: image()
+        .refine(img => Math.max(img.width, img.height) <= 4096, { message: 'Width and height of the banner must less than 4096 pixels' })
+        .optional(),
+    }),
 })
 
 export const collections = {
