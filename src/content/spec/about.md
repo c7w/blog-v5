@@ -38,7 +38,7 @@ pubDate: 2025-07-28
 
 ### Research Interests
 
-Let's build the agents that transition humanity from *hands-off* interaction to a *minds-off* future! 
+Let's build LLM-based agents that free humanity from *hands-on* manual interaction, moving toward a *minds-off* future where agents operate completely independently!
 Most recently, I am working with [SIALab](https://air.tsinghua.edu.cn/en/info/1007/1886.htm) on building agents that set our mind free for daily tasks. 
 Topics I am interested in:
 - Multi-turn Reinforcement Learning
