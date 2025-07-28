@@ -50,7 +50,7 @@ function generateKeywords(): string {
 }
 
 const seoLinks = [
-  { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+  { rel: 'icon', href: '/favicon.jpg', type: 'image/jpeg' },
   {
     rel: 'alternate',
     type: 'application/rss+xml',
@@ -138,7 +138,7 @@ async function getOptimizedImageURL() {
     "url": configSite.website,
     "logo": {
       "@type": "ImageObject",
-      "url": new URL('/favicon.svg', configSite.website).toString()
+      "url": new URL('/favicon.jpg', configSite.website).toString()
     }
   },
   "mainEntityOfPage": {
