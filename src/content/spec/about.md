@@ -74,11 +74,11 @@ Topics I am interested in:
     <div class="timeline-dot in-progress"></div>
     <div class="timeline-content">
       <h3>Selected Publications</h3>
-      <div class="timeline-meta">† indicates first or co-first author.</div>
+      <div class="timeline-meta"><sup>†</sup> indicates first or co-first author.</div>
       <ul>
-        <li>†PartRM: Modeling Part-Level Dynamics with <strong>Large</strong> Cross-State <strong>Reconstruction Model</strong>, <em>CVPR 2025</em>.</li>
-        <li>†Ctrl-U: Robust <strong>Conditional Image Generation</strong> Via Uncertainty-aware Reward Modeling, <em>ICLR 2025</em>.</li>
-        <li>†SCP-Diff: Spatial-Categorical Joint Prior for <strong>Diffusion</strong> Based Semantic Image Synthesis, <em>ECCV 2024</em>.</li>
+        <li><sup>†</sup>PartRM: Modeling Part-Level Dynamics with <strong>Large</strong> Cross-State <strong>Reconstruction Model</strong>, <em>CVPR 2025</em>.</li>
+        <li><sup>†</sup>Ctrl-U: Robust <strong>Conditional Image Generation</strong> Via Uncertainty-aware Reward Modeling, <em>ICLR 2025</em>.</li>
+        <li><sup>†</sup>SCP-Diff: Spatial-Categorical Joint Prior for <strong>Diffusion</strong> Based Semantic Image Synthesis, <em>ECCV 2024</em>.</li>
       </ul>
     </div>
   </div>
@@ -110,11 +110,11 @@ Topics I am interested in:
     <div class="timeline-dot finished"></div>
     <div class="timeline-content">
       <h3>Publications</h3>
-      <div class="timeline-meta">† indicates first or co-first author.</div>
+      <div class="timeline-meta"><sup>†</sup> indicates first or co-first author.</div>
       <ul>
-        <li>†DQS3D: Densely-matched Quantization-aware <strong>Semi-supervised</strong> 3D Detection, <em>ICCV 2023</em>.</li>
-        <li>†From <strong>Semi-supervised</strong> to Omni-supervised Room Layout Estimation Using Point Clouds, <em>ICRA 2023</em>.</li>
-        <li>†Training-Free <strong>Model Merging</strong> for Multi-target <strong>Domain Adaptation</strong>, <em>ECCV 2024</em>.</li>
+        <li><sup>†</sup>DQS3D: Densely-matched Quantization-aware <strong>Semi-supervised</strong> 3D Detection, <em>ICCV 2023</em>.</li>
+        <li><sup>†</sup>From <strong>Semi-supervised</strong> to Omni-supervised Room Layout Estimation Using Point Clouds, <em>ICRA 2023</em>.</li>
+        <li><sup>†</sup>Training-Free <strong>Model Merging</strong> for Multi-target <strong>Domain Adaptation</strong>, <em>ECCV 2024</em>.</li>
       </ul>
     </div>
   </div>

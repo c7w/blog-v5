@@ -7,6 +7,9 @@ interface Props {
   title?: string
   desc?: string
   banner?: ImageMetadata
+  keywords?: string[]
+  category?: string[]
+  articleKeywords?: string
 }
 
 const props = Astro.props
@@ -16,10 +19,35 @@ const configSite = themeConfig.site
 
 const title = props.title ?? configSite.title
 const desc = props.desc ?? configSite.description
-const canonical = configSite.website
+const canonical = new URL(Astro.url.pathname, configSite.website).toString()
 const twitter = configSEO.twitter
 const rss = new URL('/atom.xml', Astro.site).toString()
 const optimizedImage = await getOptimizedImageURL()
+
+// 生成关键词
+function generateKeywords(): string {
+  const defaultKeywords = '机器学习,深度学习,强化学习,计算机视觉,人工智能,博客,技术分享'
+  const englishKeywords = 'machine learning,deep learning,reinforcement learning,computer vision,artificial intelligence,blog,tech'
+  
+  let keywords = [defaultKeywords, englishKeywords]
+  
+  // 如果文章有分类，添加分类作为关键词
+  if (props.category && props.category.length > 0) {
+    keywords.push(props.category.join(','))
+  }
+  
+  // 如果提供了自定义关键词数组
+  if (props.keywords && props.keywords.length > 0) {
+    keywords.push(props.keywords.join(','))
+  }
+  
+  // 如果提供了文章级别的关键词字符串
+  if (props.articleKeywords) {
+    keywords.push(props.articleKeywords)
+  }
+  
+  return keywords.join(',')
+}
 
 const seoLinks = [
   { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
@@ -29,12 +57,15 @@ const seoLinks = [
     title: themeConfig.site.title,
     href: rss,
   },
+  { rel: 'canonical', href: canonical },
   ...configSEO.link,
 ]
 
 const seoMeta = [
   { name: 'viewport', content: 'width=device-width' },
   { name: 'generator', content: Astro.generator },
+  { name: 'keywords', content: generateKeywords() },
+  { name: 'author', content: configSite.author },
   { name: 'twitter:image:src', content: optimizedImage },
   { name: 'twitter:image:alt', content: desc },
   { name: 'twitter:creator', content: twitter },
@@ -42,16 +73,36 @@ const seoMeta = [
   { name: 'twitter:card', content: 'summary_large_image' },
   { name: 'twitter:title', content: title },
   { name: 'twitter:description', content: desc },
+  { property: 'og:url', content: canonical },
+  { property: 'og:site_name', content: configSite.title },
+  { property: 'article:author', content: configSite.author },
   ...configSEO.meta,
 ]
+
+// 如果是文章页面，添加文章相关的meta标签
+if (props.category && props.category.length > 0) {
+  seoMeta.push(
+    { property: 'article:section', content: props.category[0] },
+    { property: 'article:tag', content: props.category.join(',') }
+  )
+}
 
 const openGraph: SEOProps['openGraph'] = {
   basic: {
     title: title,
-    type: 'article',
+    type: props.title ? 'article' : 'website',
     image: optimizedImage,
     url: canonical,
   },
+  optional: {
+    description: desc,
+    siteName: configSite.title,
+  },
+  article: props.title ? {
+    authors: [configSite.author],
+    section: props.category?.[0],
+    tags: props.category,
+  } : undefined,
 }
 
 async function getOptimizedImageURL() {
@@ -67,3 +118,37 @@ async function getOptimizedImageURL() {
   extend={{ link: seoLinks, meta: seoMeta }}
   openGraph={openGraph}
 />
+
+<!-- JSON-LD 结构化数据 -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": props.title ? "BlogPosting" : "WebSite",
+  "headline": title,
+  "description": desc,
+  "image": optimizedImage,
+  "url": canonical,
+  "author": {
+    "@type": "Person",
+    "name": configSite.author,
+    "url": configSite.website
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": configSite.title,
+    "url": configSite.website,
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/favicon.svg', configSite.website).toString()
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonical
+  },
+  ...(props.title && {
+    "articleSection": props.category?.[0],
+    "keywords": generateKeywords(),
+    "datePublished": new Date().toISOString(),
+    "dateModified": new Date().toISOString()
+  })
+})} />
