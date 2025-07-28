@@ -1,0 +1,112 @@
+---
+import LayoutDefault from '~/layouts/LayoutDefault.astro'
+
+const friendLinks = [
+  {
+    name: 'Ashitemaru',
+    url: 'https://ashitemaru.github.io/',
+  },
+  {
+    name: '茨月',
+    url: 'https://zcy.moe/',
+  },
+  {
+    name: 'panda2134',
+    url: 'https://blog.panda2134.site/',
+  },
+  {
+    name: 'Zapic',
+    url: 'https://blog.zapic.moe/',
+  },
+  {
+    name: 'ff98sha',
+    url: 'https://www.ff98sha.me/',
+  },
+  {
+    name: 'Azure Zeng',
+    url: 'https://blog.azurezeng.com/',
+  },
+  {
+    name: '阿汐',
+    url: 'https://axi404.top/'
+  }
+]
+---
+
+<LayoutDefault>
+  <div flex="~ col gap-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold mb-4">友情链接</h1>
+      <p class="text-gray-600 dark:text-gray-400">
+        Friend Links
+      </p>
+    </div>
+
+    <!-- 友链网格 -->
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {friendLinks.map(({ name, url, description }) => (
+        <div class="friend-card p-4 border border-gray-200 dark:border-gray-300 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <a href={url} target="_blank" rel="noopener noreferrer" class="block">
+            <h3 class="text-lg font-semibold mb-2 text-blue-600 dark:text-blue-400">
+              {name}
+            </h3>
+            <div class="flex items-center text-xs text-gray-500 dark:text-gray-500">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+              访问链接
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- 友链申请说明 -->
+    <div class="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <h2 class="text-xl font-semibold mb-4">友链申请</h2>
+      <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        <p>欢迎交换友情链接！如果你也有技术博客，可以通过以下方式申请：</p>
+        <ul class="list-disc list-inside space-y-1 ml-4">
+          <li>网站内容积极向上，技术相关</li>
+          <li>网站可正常访问，更新频率稳定</li>
+          <li>优先考虑原创内容丰富的博客</li>
+        </ul>
+        <p class="mt-4">
+          <strong>申请方式：</strong>请通过邮件或其他方式联系我 :)
+        </p>
+      </div>
+    </div>
+  </div>
+</LayoutDefault>
+
+<style>
+.friend-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .friend-card {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.friend-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .friend-card:hover {
+  background: rgba(30, 30, 30, 0.9);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style> 
