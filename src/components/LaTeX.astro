@@ -8,10 +8,49 @@ const katex = latex.katex
 
 {
   katex && (
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
-      crossorigin="anonymous"
-    />
+    <>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
+        crossorigin="anonymous"
+      />
+      <script 
+        defer 
+        src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"
+        crossorigin="anonymous"
+      ></script>
+      <script 
+        defer 
+        src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+        crossorigin="anonymous"
+      ></script>
+      <script is:inline>
+        function renderMath() {
+          if (typeof renderMathInElement !== 'undefined') {
+            renderMathInElement(document.body, {
+              // 行内公式分隔符
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+              ],
+              // 允许在这些标签中渲染公式
+              ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+              // 忽略包含这些类名的元素
+              ignoredClasses: ['no-katex'],
+              // 错误处理
+              throwOnError: false
+            });
+          }
+        }
+
+        // 初始页面加载时渲染
+        document.addEventListener("DOMContentLoaded", renderMath);
+        
+        // Swup页面切换后重新渲染
+        document.addEventListener('swup:contentReplaced', renderMath);
+      </script>
+    </>
   )
 }

@@ -14,6 +14,28 @@ export default defineConfig({
   site: themeConfig.site.website,
   prefetch: true,
   base: '/',
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+        jpeg: {
+          quality: 90,
+          progressive: true,
+        },
+        png: {
+          quality: 90,
+          compressionLevel: 6,
+        },
+        webp: {
+          quality: 90,
+        },
+        avif: {
+          quality: 90,
+        },
+      },
+    },
+  },
   vite: {
     plugins: [
       // eslint-disable-next-line ts/ban-ts-comment
