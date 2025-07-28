@@ -47,6 +47,10 @@ Topics I am interested in:
 - Self-evolution of Agent Systems
 
 
+If you’re interested in related topics and would like to collaborate, feel free to reach out with my email (which you can find in the hyperlink on the right panel).
+
+
+
 
 ### Research Experience
 
