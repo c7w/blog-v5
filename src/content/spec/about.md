@@ -20,7 +20,7 @@ pubDate: 2025-07-28
       <h3>Bachelor of Engineering</h3>
       <div class="timeline-meta">2020 - 2024 | Computer Science | Tsinghua University</div>
       <p><strong>GPA 3.98 / 4.00.</strong> Ranked <strong>#1</strong> out of 204 in the Department of CS.</p>
-      <p>Proud to have received the highest distinction for undergraduates at <a href="https://air.tsinghua.edu.cn/info/1007/2133.htm">Tsinghua</a>.</p>
+      <p>Proud to have received <a href="https://air.tsinghua.edu.cn/info/1007/2133.htm">the highest distinction</a> for undergraduates at Tsinghua in 2023 and the SenseTime Scholarship in 2024.</p>
     </div>
   </div>
   
