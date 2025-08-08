@@ -266,14 +266,12 @@ If you’re interested in related topics and would like to collaborate, feel fre
 
 .research-details .timeline-content p {
   /* font-size: 18px; */
-  color: #ffffff !important;
   margin: 0.5rem 0 0.5px 2rem !important;
   line-height: 1.6;
 }
 
 .research-details .timeline-content ul {
   /* font-size: 18px; */
-  color: #ffffff !important;
   margin: 0.5rem 0 0.5px 0.5rem !important;
   line-height: 1.6;
   font-size: 14px;
