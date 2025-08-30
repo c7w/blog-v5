@@ -1,14 +1,12 @@
 ---
 title: "Huan-ang Gao (高焕昂)"
-pubDate: 2025-07-28
+pubDate: 2025-08-31
 ---
 
-![photo](about.assets/me.jpeg)
+![photo](about.assets/me_2025_08.jpg)
 
-- First-year Ph. D. student @ CS & AIR, Tsinghua University
+- 2nd-year Ph. D. student @ [CS](https://www.cs.tsinghua.edu.cn/csen/) & [AIR](https://air.tsinghua.edu.cn/en/index.htm), Tsinghua University
 - Co-founder @ [Lumina-Embodied.AI](https://lumina-embodied.ai) Community
-
-
 
 
 ### Education
@@ -38,18 +36,16 @@ pubDate: 2025-07-28
 
 ### Research Interests
 
-Let's build LLM-based agents that free humanity from *hands-on* manual interaction, moving toward a *minds-off* future where agents operate completely independently!
+Let's build LLM-based agents that free humanity from hands-on manual tasks and create a minds-off future where agents operate completely autonomously!
 Most recently, I am working with [SIALab](https://air.tsinghua.edu.cn/en/info/1007/1886.htm) on building agents that set our mind free for daily tasks. 
 Topics I am interested in:
 - Multi-turn Reinforcement Learning
 - Scalable Reinforcement Learning
 - Evaluation of Capability Bottleneck in Agent Systems
   - e.g., memorization, spatial reasoning, tool using...
-- Self-evolution of Agent Systems
+- Self-evolution of Agent Systems [[**Survey**](https://arxiv.org/abs/2507.21046) / [Report (机器之心)](https://mp.weixin.qq.com/s/rKEUDBvdPhCitKXtuBQh0w)]
 
-
-If you’re interested in related topics and would like to collaborate, feel free to reach out with my email (which you can find in the hyperlink on the right panel).
-
+If you’re interested in related topics and would like to collaborate, feel free to reach out with my email (which you can find in the hyperlink on the right panel)!
 
 
 
@@ -141,7 +137,7 @@ If you’re interested in related topics and would like to collaborate, feel fre
 <details>
 <summary><strong>Reviewer</strong> @ Academic Conferences & Journals</summary>
 
-- CVPR (2025), ICCV (2025), WACV (2024), 3DV (2025), TPAMI
+- CVPR (2025), ICCV (2025), WACV (2024, 2025), 3DV (2025, 2026), TPAMI
 - NeurIPS (2025), ICLR (2025)
 - ICRA (2025), IROS (2024, 2025), CoRL (2025)
 - AAAI (2024), ICME (2025)
@@ -325,7 +321,7 @@ If you’re interested in related topics and would like to collaborate, feel fre
 
 /* 个人照片样式 */
 img[alt="photo"] {
-  height: 200px !important;
+  height: 300px !important;
   width: auto;
   object-fit: cover;
   border-radius: 8px;
