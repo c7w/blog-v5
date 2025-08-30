@@ -329,6 +329,12 @@ img[alt="photo"] {
   margin: 20px auto;
 }
 
+/* 嵌套列表样式调整 */
+.prose ul ul {
+  margin: 0 !important;
+  padding-left: 1.5em !important;
+}
+
 /* 折叠面板样式 */
 details {
   /* border: 1px solid rgba(255, 255, 255, 0.1); */
