@@ -1,5 +1,5 @@
 ---
-title: [Done Right] Mixture-of-Expert Done Right
+title: "[Done Right] Mixture-of-Expert Done Right"
 mathjax: true
 pubDate: 2025-09-01 19:20:22
 categories:
