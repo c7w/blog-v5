@@ -1,12 +1,12 @@
 ---
 title: "Huan-ang Gao (高焕昂)"
-pubDate: 2025-08-31
+pubDate: 2026-3-10
 ---
 
 ![photo](about.assets/me_2025_08.jpg)
 
 - 2nd-year Ph. D. student @ [CS](https://www.cs.tsinghua.edu.cn/csen/) & [AIR](https://air.tsinghua.edu.cn/en/index.htm), Tsinghua University
-- Co-founder @ [Lumina-Embodied.AI](https://lumina-embodied.ai) Community
+- Research Intern @ ByteDance Seed
 
 
 ### Education
@@ -36,22 +36,21 @@ pubDate: 2025-08-31
 
 ### Research Interests
 
-Let's build LLM-based agents that free humanity from hands-on manual tasks and create a minds-off future where agents operate completely autonomously!
-Most recently, I am working with [SIALab](https://air.tsinghua.edu.cn/en/info/1007/1886.htm) on building agents that set our mind free for daily tasks. 
-Topics I am interested in:
-- Multi-turn Reinforcement Learning
-- Scalable Reinforcement Learning
-- Evaluation of Capability Bottleneck in Agent Systems
-  - e.g., memorization, spatial reasoning, tool using...
-- Self-evolution of Agent Systems [[**Survey**](https://arxiv.org/abs/2507.21046) / [Report (机器之心)](https://mp.weixin.qq.com/s/rKEUDBvdPhCitKXtuBQh0w)]
+Most recently, I am conducting experiments on large-scale agentic reinforcement learning. I am working with [SIA-Lab](https://air.tsinghua.edu.cn/en/info/1007/1886.htm), a collaboration lab between THU-AIR and ByteDance Seed.
 
-If you’re interested in related topics and would like to collaborate, feel free to reach out with my email (which you can find in the hyperlink on the right panel)!
+I'm also super interested in developing and building products that adapt to user context, evolve over time, and proactively offer advice to the user.
+
+<!-- - Self-evolution of Agent Systems [[**Survey**](https://arxiv.org/abs/2507.21046) / [Report (机器之心)](https://mp.weixin.qq.com/s/rKEUDBvdPhCitKXtuBQh0w)] -->
+
+I believe the most critical gap for agents to create real-world value lies in their ability to learn new skills and verify them through user interaction.
+
+If you’re interested in related topics and would like to collaborate, feel free to reach out! You can find my email in the hyperlink on the right panel.
 
 
 
 ### Research Experience
 
-<details open class="research-details">
+<details class="research-details">
 <summary class="research-header research-green">Generative Simulation for Embodied AI</summary>
 
 <div class="timeline-dark">
@@ -125,7 +124,7 @@ If you’re interested in related topics and would like to collaborate, feel fre
 
 ### Services
 
-<details open>
+<details>
 <summary><strong>Co-Founder</strong> @ <a href="https://lumina-embodied.ai">Lumina-Embodied.AI</a> (2025.4-Now)</summary>
 
 - Building community for embodied AI research and applications
@@ -147,7 +146,7 @@ If you’re interested in related topics and would like to collaborate, feel fre
 <details>
 <summary>Teaching Assistant @ CS, THU</summary>
 
-- (30240163) Software Engineering. Compulsory course in CS, THU. (23Spring, 23Fall, 24Spring, 24Fall, 25Spring, **25Fall**)
+- (30240163) Software Engineering. Compulsory course in CS, THU. (23Spring, 23Fall, 24Spring, 24Fall, 25Spring, 25Fall)
 - (30240551) Digital Logic Experimentation. Compulsory course in CS, THU. (24Spring, 25Spring)
 - (40240354) Computer Organization and Design. Compulsory course in CS, THU. (23Fall)
 </details>
