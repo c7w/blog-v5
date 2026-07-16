@@ -55,7 +55,7 @@ I'm also super interested in developing and building products that adapt to user
 
 <!-- I believe the most critical gap for agents to create real-world value lies in their ability to learn new skills and verify them through user interaction.
 
-If you’re interested in related topics and would like to collaborate, feel free to reach out! You can find my email in the hyperlink on the right panel. --> -->
+If you’re interested in related topics and would like to collaborate, feel free to reach out! You can find my email in the hyperlink on the right panel. -->
 
 
 
