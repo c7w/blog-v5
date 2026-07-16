@@ -21,7 +21,7 @@ export const userConfig: Partial<UserConfig> = {
     ],
     footer: [
       // 页脚信息
-      '© 2020-2025 <a target="_blank" href="%website">%author</a>',
+      '© 2020-2026 <a target="_blank" href="%website">%author</a>',
     ],
     
   },
@@ -56,7 +56,7 @@ export const userConfig: Partial<UserConfig> = {
       // 版权信息
       { 
         name: 'copyright', 
-        content: 'Copyright (c) 2020-2025 c7w'
+        content: 'Copyright (c) 2020-2026 c7w'
       },
       // 网站类型
       { 
