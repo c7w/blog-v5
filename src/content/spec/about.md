@@ -1,12 +1,11 @@
 ---
 title: "Huan-ang Gao (高焕昂)"
-pubDate: 2026-3-10
+pubDate: 2026-7-16
 ---
 
 ![photo](about.assets/me_2025_08.jpg)
 
-- 2nd-year Ph. D. student @ [CS](https://www.cs.tsinghua.edu.cn/csen/) & [AIR](https://air.tsinghua.edu.cn/en/index.htm), Tsinghua University
-- Research Intern @ ByteDance Seed
+- 3rd-year Ph. D. student @ [CS](https://www.cs.tsinghua.edu.cn/csen/) & [AIR](https://air.tsinghua.edu.cn/en/index.htm), Tsinghua University
 
 
 ### Education
@@ -36,19 +35,31 @@ pubDate: 2026-3-10
 
 ### Research Interests
 
-Most recently, I am conducting experiments on large-scale agentic reinforcement learning. I am working with [SIA-Lab](https://air.tsinghua.edu.cn/en/info/1007/1886.htm), a collaboration lab between THU-AIR and ByteDance Seed.
+<!-- I work with [SIA-Lab](https://air.tsinghua.edu.cn/en/info/1007/1886.htm), a joint research lab between Tsinghua AIR and ByteDance Seed. -->
+
+I am a firm believer in *The Bitter Lesson*: throughout the history of AI, general methods that can leverage increasing amounts of computation have ultimately outperformed approaches built around hand-crafted knowledge. Recent advances in large-scale reinforcement learning for LLM reasoning and agentic coding have further strengthened this belief. They suggest that scaling learning through exploration, interaction, and verifiable feedback is a promising path toward increasingly capable intelligence.
+
+Looking ahead, I believe **autonomous research systems** will develop along two dimensions: depth and breadth. In **depth**, these systems will push the limits of LLM intelligence by scaling the number of tokens devoted to solving open problems. In **breadth**, they will expand into real-world R&D workflows. In large technology companies, for example, an AI researcher could work alongside algorithm engineers: given an objective, a concrete key result, and a baseline, it would continuously explore different approaches and improve the target without reward hacking.
+
+My research aims to help realize this vision by developing the data, benchmarks, and frontier learning algorithms needed to build and evaluate such systems systematically. Two questions are central to this agenda. First, how can we train these systems effectively over long horizons, where useful feedback may be sparse and credit must be assigned across extended sequences of decisions and experiments. Second, how can we encode human judgment and taste into the training signal, so that these systems learn not only to optimize measurable outcomes, but also to recognize which ideas are promising, meaningful, and worth pursuing.
+
+If you’re interested in related topics and would like to collaborate, feel free to reach out! You can find my email in the hyperlink on the right panel.
+
+<!-- 
+
+Most recently, I am conducting experiments on large-scale agentic reinforcement learning. 
 
 I'm also super interested in developing and building products that adapt to user context, evolve over time, and proactively offer advice to the user.
 
 <!-- - Self-evolution of Agent Systems [[**Survey**](https://arxiv.org/abs/2507.21046) / [Report (机器之心)](https://mp.weixin.qq.com/s/rKEUDBvdPhCitKXtuBQh0w)] -->
 
-I believe the most critical gap for agents to create real-world value lies in their ability to learn new skills and verify them through user interaction.
+<!-- I believe the most critical gap for agents to create real-world value lies in their ability to learn new skills and verify them through user interaction.
 
-If you’re interested in related topics and would like to collaborate, feel free to reach out! You can find my email in the hyperlink on the right panel.
+If you’re interested in related topics and would like to collaborate, feel free to reach out! You can find my email in the hyperlink on the right panel. --> -->
 
 
 
-### Research Experience
+### Past Research Experience
 
 <details class="research-details">
 <summary class="research-header research-green">Generative Simulation for Embodied AI</summary>
@@ -125,7 +136,7 @@ If you’re interested in related topics and would like to collaborate, feel fre
 ### Services
 
 <details>
-<summary><strong>Co-Founder</strong> @ <a href="https://lumina-embodied.ai">Lumina-Embodied.AI</a> (2025.4-Now)</summary>
+<summary><strong>Co-Founder</strong> @ <a href="https://lumina-embodied.ai">Lumina-Embodied.AI</a></summary>
 
 - Building community for embodied AI research and applications
 - Bridging academic research with industry implementations
@@ -152,7 +163,7 @@ If you’re interested in related topics and would like to collaborate, feel fre
 </details>
 
 <details>
-<summary>清华大学计算机系 科创辅导员 (2024.9-Now)</summary>
+<summary>清华大学计算机系 科创辅导员 (2024.9-2026.6)</summary>
 
 - Technical training & competition guidance for undergraduates
 - Research & internship opportunity integration
