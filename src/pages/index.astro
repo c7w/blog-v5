@@ -1,27 +1,225 @@
 ---
-import { getEntry, render } from 'astro:content'
-import LayoutDefault from '~/layouts/LayoutDefault.astro'
-import { formatDate } from '~/utils'
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+import { SITE, SOCIALS } from "@consts";
+import tsinghuaLogo from "../assets/tsinghua.png";
+import photo from "../assets/me.jpg";
 
-// const { translate: t } = Astro.locals
-const aboutPost = await getEntry('spec', 'about')
-if (!aboutPost) {
-  throw new Error('No about post found')
-}
-const { Content } = await render(aboutPost)
+const education = [
+  {
+    date: "2024 - Present",
+    title: "Ph.D. student in Computer Science",
+    org: "Tsinghua University",
+    logo: tsinghuaLogo,
+    notes: [
+      "Advisor: Prof. <a href=\"https://air.tsinghua.edu.cn/en/info/1046/1188.htm\" target=\"_blank\">Ya-Qin Zhang</a>, Founding Dean of Institute for AI Industry Research (AIR), Tsinghua University.",
+    ],
+  },
+  {
+    date: "2020 - 2024",
+    title: "B.Eng. in Computer Science",
+    org: "Tsinghua University",
+    logo: tsinghuaLogo,
+    notes: [
+      "GPA 3.98 / 4.00, ranked #1 out of 204 in the Department of Computer Science and Technology.",
+      "Received <a href=\"https://air.tsinghua.edu.cn/info/1007/2133.htm\" target=\"_blank\">the highest distinction</a> for undergraduates at Tsinghua in 2023 and the SenseTime Scholarship in 2024.",
+    ],
+  },
+];
+
+// † marks first or co-first author
+const research = [
+  {
+    topic: "Agentic Reinforcement Learning",
+    summary: [
+      "I had a wonderful year-long research journey as an intern at ByteDance Seed, where I was a core contributor to the coding agent team for Seed 1.8 and Seed 2.0.",
+      "During this time, I worked on both infrastructure and algorithms. On the infrastructure side, I contributed to building the RL training infrastructure and the data infrastructure behind it. On the algorithm side, I designed difficulty-aware data scheduling: when the data pool exceeds the training budget, the sampling ratio of each problem is adjusted dynamically according to its difficulty, together with mechanisms such as a replay buffer to reuse informative samples.",
+    ],
+    papers: [
+      { title: "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation", venue: "arXiv 2026", first: true },
+      { title: "Weak-to-Strong Generalization via Direct On-Policy Distillation", venue: "arXiv 2026", first: true },
+      { title: "CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation", venue: "arXiv 2026", first: false },
+    ],
+  },
+  {
+    topic: "<s>Generative Simulation</s> <span class=\"font-normal text-muted\">(Now termed as)</span> World Models for Embodied AI",
+    summary: [
+      "The development and iteration of autonomous driving and robotics policies are limited by the high costs, low efficiency, and safety risks of real-world testing. Generative AI offers a potential breakthrough by enabling high-fidelity, interactive, and editable simulation testing.",
+      "I worked on building world models that drive simulation with generative methods, along two directions: high-fidelity scene reconstruction, building digital twins of real scenes with NeRF or Gaussian splatting; and controllable content generation, leveraging the generative priors of diffusion models to provide endless, controllable scene variations and edge cases on top of reconstructed scenes.",
+    ],
+    papers: [
+      { title: "PartRM: Modeling Part-Level Dynamics with Large Cross-State Reconstruction Model", venue: "CVPR 2025", first: true },
+      { title: "Ctrl-U: Robust Conditional Image Generation via Uncertainty-aware Reward Modeling", venue: "ICLR 2025", first: true },
+      { title: "SCP-Diff: Spatial-Categorical Joint Prior for Diffusion Based Semantic Image Synthesis", venue: "ECCV 2024", first: true },
+    ],
+  },
+  {
+    topic: "Data Efficient Scene Parsing",
+    summary: [
+      "2D/3D perception is fundamental to embodied intelligence, but the extremely high cost of data annotation severely restricts the development of perception models.",
+      "My early research focused on data-efficient perception, particularly semi-supervised learning and domain adaptation. In DQS3D, I proposed a single-stage, densely-matched semi-supervised framework for 3D object detection, addressing the insufficient training signals caused by sparse matching in previous methods. I also explored self-supervised depth estimation, indoor layout estimation, and HD map generation.",
+    ],
+    papers: [
+      { title: "DQS3D: Densely-matched Quantization-aware Semi-supervised 3D Detection", venue: "ICCV 2023", first: true },
+      { title: "From Semi-supervised to Omni-supervised Room Layout Estimation Using Point Clouds", venue: "ICRA 2023", first: true },
+      { title: "Training-Free Model Merging for Multi-target Domain Adaptation", venue: "ECCV 2024", first: true },
+    ],
+  },
+];
+
+const services = [
+  {
+    title: "Co-Founder @ <a href=\"https://lumina-embodied.ai\" target=\"_blank\">Lumina-Embodied.AI</a> Research Community",
+    notes: ["Building a community for embodied AI research and applications."],
+  },
+  {
+    title: "Reviewer",
+    notes: [
+      "Computer Vision: CVPR, ICCV, ECCV, WACV, 3DV",
+      "Machine Learning &amp; AI: NeurIPS, ICML, ICLR, AAAI",
+      "Robotics: CoRL, ICRA, IROS",
+      "Journal: TPAMI",
+    ],
+  },
+  {
+    title: "Teaching Assistant @ Department of Computer Science and Technology, THU",
+    notes: [
+      "Software Engineering (23Spring - 25Fall)",
+      "Digital Logic Experimentation (24Spring, 25Spring)",
+      "Computer Organization and Design (23Fall)",
+    ],
+  },
+  {
+    title: "清华大学计算机科学与技术系 科创辅导员 (2024.9 - 2026.6)",
+    notes: ["Technical training, competition guidance, and research & internship opportunities for undergraduates."],
+  },
+  {
+    title: "清华大学计算机科学与技术系 学生科协主席 (2023.5 - 2024.6)",
+    notes: [
+      "Infrastructure: built the association's homepage and technical documentation.",
+      "Training: organized the summer training camp for freshman year students.",
+      "Resources: launched an internal resource portal gathering internship opportunities and graduate admissions information for students in the department.",
+    ],
+  },
+];
 ---
 
-<LayoutDefault>
-  <header flex="~ col gap-2">
-    <h1 class="post-title">
-      <a class="not-prose">{aboutPost.data.title}</a>
-    </h1>
-    <div class="text-3.5">
-      <span>Last Updated at</span>
-      <time>{formatDate(aboutPost.data.pubDate)}</time>
-    </div>
-  </header>
-  <article class="prose">
-    <Content />
-  </article>
-</LayoutDefault>
+<PageLayout title={SITE.TITLE} description={SITE.DESCRIPTION}>
+  <Container>
+    <section class="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h1 class="title mb-2">
+          Huan-ang Gao <span class="font-normal text-muted">(高焕昂)</span>
+        </h1>
+        <p class="mb-6 text-muted">Ph.D. student, Tsinghua University</p>
+        <ul class="flex flex-wrap gap-x-2 gap-y-1 mb-2">
+          {SOCIALS.map((SOCIAL, i) => (
+            <li class="flex gap-x-2 text-nowrap">
+              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+                {SOCIAL.NAME}
+              </Link>
+              {i < SOCIALS.length - 1 && <span class="text-muted">/</span>}
+            </li>
+          ))}
+        </ul>
+        <p>Mail: cc7w [at] foxmail [dot] com</p>
+      </div>
+      <Image
+        src={photo}
+        alt="Photo of Huan-ang Gao"
+        width={256}
+        class="w-28 shrink-0 rounded-lg object-cover aspect-[3/4] sm:w-32"
+        loading="eager"
+      />
+    </section>
+
+    <section class="mt-16">
+      <h2 class="title mb-6 text-xl">Education</h2>
+      <ul class="space-y-6" role="list">
+        {education.map(entry => (
+          <li class="flex gap-4">
+            <Image src={entry.logo} alt={`${entry.org} logo`} width={96} format="webp" class="size-10 shrink-0" />
+            <div>
+              <div class="flex flex-wrap gap-x-3 items-baseline">
+                <span class="font-semibold text-accent-2">{entry.title}</span>
+                <span class="text-muted">{entry.date}</span>
+              </div>
+              <div class="text-muted">{entry.org}</div>
+              <article>
+                {entry.notes.map(note => <p class="my-1" set:html={note} />)}
+              </article>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="title mb-6 text-xl">Research Interests</h2>
+      <article>
+        <p>
+          I am a firm believer in <em>The Bitter Lesson</em>. What matters is general methods that scale with computation, and today that means scaling learning through agentic rollouts and environment feedback.
+        </p>
+        <p>
+          I am broadly interested in bringing LLM agents into every specialized field where real work gets done, as a path toward <strong>general-purpose agents</strong>. I think about this along three lines:
+        </p>
+        <ol>
+          <li>
+            <strong>Data &amp; Evaluation.</strong> An RL environment consists of the instructions given to the agent, a sandbox equipped with the right tools, realistic data for the agent to work on, and a verifier that reliably judges the outcome. I care about deciding which tasks should be evaluated first, and then synthesizing them at scale.
+          </li>
+          <li>
+            <strong>Scalable Rollouts.</strong> What if current models cannot produce meaningful learning signals in a new domain? I am particularly interested in self-evolving agents that accumulate reusable skills, and in mid-training: what kind of mid-training data effectively improves performance in a domain, and more broadly, what role data plays.
+          </li>
+          <li>
+            <strong>Scalable Learning.</strong> How can we design learning algorithms that work efficiently for a given domain? My core belief is that learning algorithms are grounded in data: the data you have determines which algorithms you can use.
+          </li>
+        </ol>
+        <p>
+          If you're interested in related topics and would like to collaborate, feel free to <a href={`mailto:${SITE.EMAIL}`}>reach out</a>!
+        </p>
+      </article>
+    </section>
+
+    <section class="mt-16">
+      <div class="mb-6 flex flex-wrap gap-y-2 items-baseline justify-between">
+        <h2 class="title text-xl">Past Research</h2>
+        <span class="text-muted">† first or co-first author</span>
+      </div>
+      <ul class="space-y-10" role="list">
+        {research.map(entry => (
+          <li>
+            <h3 class="font-semibold text-accent-2" set:html={entry.topic} />
+            <article>
+              {entry.summary.map(p => <p class="my-2">{p}</p>)}
+            </article>
+            {entry.papers.length > 0 && (
+              <ul class="mt-3 space-y-1.5 text-xs text-muted" role="list">
+                {entry.papers.map(paper => (
+                  <li>
+                    {paper.first && "† "}{paper.title}, <em class="whitespace-nowrap">{paper.venue}</em>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="title mb-6 text-xl">Services</h2>
+      <ul class="space-y-4" role="list">
+        {services.map(entry => (
+          <li>
+            <div class="font-semibold text-accent-2 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:decoration-link [&_a:hover]:decoration-2" set:html={entry.title} />
+            <article>
+              {entry.notes.map(note => <p class="my-1" set:html={note} />)}
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </Container>
+</PageLayout>

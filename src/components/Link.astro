@@ -1,0 +1,16 @@
+---
+type Props = {
+  href: string;
+  external?: boolean;
+}
+
+const { href, external, ...rest } = Astro.props;
+---
+
+<a
+  href={href}
+  target={ external ? "_blank" : "_self" }
+  class="cactus-link"
+  {...rest}>
+  <slot/>
+</a>
