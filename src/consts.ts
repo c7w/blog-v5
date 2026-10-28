@@ -9,5 +9,5 @@ export const SITE = {
 export const SOCIALS = [
   { NAME: "GitHub", HREF: "https://github.com/c7w" },
   { NAME: "Google Scholar", HREF: `https://scholar.google.com/citations?user=${SITE.SCHOLAR_ID}` },
-  { NAME: "Twitter", HREF: "https://twitter.com/c7w_tech" },
+  { NAME: "Twitter", HREF: "https://x.com/c7wc7w" },
 ];
