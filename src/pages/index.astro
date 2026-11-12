@@ -108,31 +108,59 @@ const services = [
 
 <PageLayout title={SITE.TITLE} description={SITE.DESCRIPTION}>
   <Container>
-    <section class="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <h1 class="title mb-2">
-          Huan-ang Gao <span class="font-normal text-muted">(高焕昂)</span>
-        </h1>
-        <p class="mb-6 text-muted">Ph.D. Candidate, Tsinghua University</p>
-        <ul class="flex flex-wrap gap-x-2 gap-y-1 mb-2">
-          {SOCIALS.map((SOCIAL, i) => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {i < SOCIALS.length - 1 && <span class="text-muted">/</span>}
-            </li>
-          ))}
-        </ul>
-        <p>Mail: cc7w [at] foxmail [dot] com</p>
+    <section>
+      <div class="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 class="title mb-5">
+            Huan-ang Gao <span class="font-normal text-muted">(高焕昂)</span>
+          </h1>
+          <p class="mb-[0.3125rem] text-muted">Ph.D. Candidate, Tsinghua University</p>
+          <p class="mb-6 text-muted">Co-founder & CTO, <Link href="https://einsia.ai" external>Einsia.AI</Link></p>
+          <ul class="flex flex-wrap gap-x-2 gap-y-1 mb-2">
+            {SOCIALS.map((SOCIAL, i) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+                  {SOCIAL.NAME}
+                </Link>
+                {i < SOCIALS.length - 1 && <span class="text-muted">/</span>}
+              </li>
+            ))}
+          </ul>
+          <p>Mail: cc7w [at] foxmail [dot] com</p>
+        </div>
+        <Image
+          src={photo}
+          alt="Photo of Huan-ang Gao"
+          width={256}
+          class="w-28 shrink-0 rounded-lg object-cover aspect-[3/4] sm:w-32"
+          loading="eager"
+        />
       </div>
-      <Image
-        src={photo}
-        alt="Photo of Huan-ang Gao"
-        width={256}
-        class="w-28 shrink-0 rounded-lg object-cover aspect-[3/4] sm:w-32"
-        loading="eager"
-      />
+    </section>
+
+    <section class="mt-16">
+      <article>
+        <p>
+          I'm currently serving as CTO of <Link href="https://einsia.ai" external>Einsia.AI</Link>, where our mission is to systematically study the capability boundaries of AI on real-world tasks — and to push those boundaries forward. We believe that within the next five years, AI agents will become core participants in all kinds of expertise work.
+        </p>
+        <p>
+          To get there, I firmly believe in <em>The Bitter Lesson</em>: what matters are general methods that scale with computation, and today that means scaling learning through agentic rollouts and environment feedback. I am broadly interested in bringing LLM agents into every specialized field where real work gets done, as a path toward <strong>general-purpose agents</strong>, and I think about this along three lines:
+        </p>
+        <ol>
+          <li>
+            <strong>Data &amp; Evaluation.</strong> An RL environment consists of the instructions given to the agent, a sandbox equipped with the right tools, realistic data for the agent to work on, and a verifier that reliably judges the outcome. Two things matter here: how to turn expert workflows into the right instructions and sandboxes, and whether the verifier measures the resulting signal correctly and informatively.
+          </li>
+          <li>
+            <strong>Scalable Rollouts.</strong> The context window of a model is finite. We cannot fit every past experience and lesson into it, so simply scaling compute will never absorb everything that long-horizon work demands. Sustained progress therefore rests on two layers. The first is the external harness — tools and scaffolding that reliably organize history (what to retrieve, compress, or discard, and what state to surface at each step), so experience can accumulate outside the model. The second is internalization — post-training and continual training, such as mid-training on verified trajectories, that distills experience the model has already validated into its own weights, instead of merely imitating a trace.
+          </li>
+          <li>
+            <strong>Scalable Learning.</strong> Learning is ultimately a problem of credit assignment: given a long trajectory and a sparse, delayed reward, which decisions deserve the credit? A good learning algorithm is one that answers this efficiently.
+          </li>
+        </ol>
+        <p>
+          If you're interested in related topics and would like to collaborate, feel free to <a href={`mailto:${SITE.EMAIL}`}>reach out</a>!
+        </p>
+      </article>
     </section>
 
     <section class="mt-16">
@@ -156,6 +184,7 @@ const services = [
       </ul>
     </section>
 
+    <!-- Research Interests merged into the intro above.
     <section class="mt-16">
       <h2 class="title mb-6 text-xl">Research Interests</h2>
       <article>
@@ -181,6 +210,7 @@ const services = [
         </p>
       </article>
     </section>
+    -->
 
     <section class="mt-16">
       <div class="mb-6 flex flex-wrap gap-y-2 items-baseline justify-between">
